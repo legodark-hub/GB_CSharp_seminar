@@ -8,3 +8,7 @@ int NumberSum (int num) {
     }
     return sum;
 }
+
+Console.WriteLine("Введите число");
+int num = int.Parse(Console.ReadLine());
+ Console.WriteLine($"Сумма цифр числа - {NumberSum(num)}");
