@@ -1,10 +1,7 @@
 ﻿// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и 
 // возвращает значение этого элемента или же указание, что такого элемента нет.
-double[,] Create2DArray()
+double[,] Create2DArray(int[] array)
 {
-    Console.WriteLine("Задайте число строк и стобцов массива через пробел");
-    string input = Console.ReadLine();
-    int[] array = input.Split(' ').Select(int.Parse).ToArray();
     double[,] result = new double[array[0], array[1]];
     for (int i = 0; i < array[0]; i++)
     {
@@ -23,8 +20,11 @@ double Print2DArrayElement(int[] pos, double[,] array)
     else {Console.WriteLine("Элемента в заданной позиции нет"); return 0;};
 }
 
-double[,] createdArray = Create2DArray();
-Console.WriteLine("Задайте позицию элемента массива через пробел");
+Console.WriteLine("Задайте число строк и стобцов массива через пробел");
 string input = Console.ReadLine();
 int[] array = input.Split(' ').Select(int.Parse).ToArray();
-Console.WriteLine(Print2DArrayElement(array, createdArray));
+double[,] createdArray = Create2DArray(array);
+Console.WriteLine("Задайте позицию элемента массива через пробел");
+string input1 = Console.ReadLine();
+int[] pos = input1.Split(' ').Select(int.Parse).ToArray();
+Console.WriteLine(Print2DArrayElement(pos, createdArray));
