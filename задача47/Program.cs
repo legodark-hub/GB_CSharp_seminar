@@ -8,7 +8,7 @@ double[,] Generate2DArray(int[] array)
     {
         for (int j = 0; j < array[1]; j++)
         {
-            result[i, j] = new Random().NextDouble() * 10;
+            result[i, j] = new Random().NextDouble() * (array[3] - array[2]) + array[2];
             Console.Write($"{result[i, j]:0.00} ");
         }
         Console.WriteLine();
@@ -16,7 +16,7 @@ double[,] Generate2DArray(int[] array)
     return result;
 }
 
-Console.WriteLine("Задайте число строк и стобцов массива через пробел");
+Console.WriteLine("Задайте число строк и стобцов массива, минимальное и максимальное значение элементов через пробел");
 string input = Console.ReadLine();
 int[] array = input.Split(' ').Select(int.Parse).ToArray();
 Generate2DArray(array);
