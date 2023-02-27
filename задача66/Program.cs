@@ -1,10 +1,10 @@
 ﻿// Задайте значения M и N. Напишите программу, которая найдёт 
 // сумму натуральных элементов в промежутке от M до N.
 
-int NaturalNumbersSum(int m, int n, int sum = 0)
+int NaturalNumbersSum(int m, int n)
 {
-    if (m <= n) return NaturalNumbersSum(m+1,n,sum+m);
-    else return sum;
+    if (m < n) return m+NaturalNumbersSum(m+1,n);
+    else return m;
 }
 
 Console.WriteLine("Введите начальное число промежутка");
